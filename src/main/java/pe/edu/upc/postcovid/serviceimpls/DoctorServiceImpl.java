@@ -1,0 +1,37 @@
+package pe.edu.upc.postcovid.serviceimpls;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pe.edu.upc.postcovid.entities.Doctor;
+import pe.edu.upc.postcovid.repositories.IdoctorRepository;
+import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
+
+import java.util.List;
+
+@Service
+public class DoctorServiceImpl implements IdoctorService {
+
+    @Autowired
+    private IdoctorRepository dS;
+
+    @Override
+    public void insert(Doctor doctor) {
+        dS.save(doctor);
+    }
+
+    @Override
+    public List<Doctor> list() {
+        return dS.findAll();
+    }
+
+    @Override
+    public void delete(int idDoctor) {
+        dS.deleteById(idDoctor);
+    }
+
+    @Override
+    public List<Doctor> search(String nameDoctor) {
+
+        return dS.buscarNombre((nameDoctor));
+    }
+}
