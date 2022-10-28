@@ -30,6 +30,7 @@ public class DoctorController {
     public void actualizar(@RequestBody Doctor d){
         dService.insert(d);
     }
+
     @PostMapping("/buscar")
     public List<Doctor> buscar(@RequestBody Doctor d){
         return dService.search(d.getNameDoctor());
