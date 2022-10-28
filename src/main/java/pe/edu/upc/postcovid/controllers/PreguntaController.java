@@ -21,7 +21,7 @@ public class PreguntaController {
         return  pService.list();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         pService.delete(id);
     }
