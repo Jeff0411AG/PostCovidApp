@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Doctor")
 public class Doctor {
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDoctor;
 
