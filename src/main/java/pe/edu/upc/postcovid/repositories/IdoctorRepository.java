@@ -13,6 +13,6 @@ public interface IdoctorRepository extends JpaRepository<Doctor,Integer>{
     @Query("from Doctor  d where upper(d.nameDoctor)  like %:nameDoctor% or LOWER(d.nameDoctor)" +
             "like %:nameDoctor% OR d.nameDoctor like %:nameDoctor% ")
 
-    List<Doctor> buscarNombre(@Param("nameDoctor")String nameDoctor);
+    List<Doctor> buscarNombre(String nameDoctor);
 
 }
