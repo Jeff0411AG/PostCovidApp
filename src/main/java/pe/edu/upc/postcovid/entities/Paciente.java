@@ -28,16 +28,15 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(int idPaciente, String namePaciente, String Birthday, String lastNamePaciente, String numberPhone, String numhistoria,
-                    String Diagnostico, String Version) {
+    public Paciente(int idPaciente, String namePaciente, String lastNamePaciente, String birthday, String numberPhone, String numhistoria, String diagnostico, String version) {
         this.idPaciente = idPaciente;
         this.namePaciente = namePaciente;
         this.lastNamePaciente = lastNamePaciente;
+        Birthday = birthday;
         this.numberPhone = numberPhone;
         this.numhistoria = numhistoria;
-        this.Diagnostico = Diagnostico;
-        this.Version = Version;
-        this.Birthday=Birthday;
+        Diagnostico = diagnostico;
+        Version = version;
     }
 
     public int getIdPaciente() {
@@ -64,6 +63,14 @@ public class Paciente {
         this.lastNamePaciente = lastNamePaciente;
     }
 
+    public String getBirthday() {
+        return Birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        Birthday = birthday;
+    }
+
     public String getNumberPhone() {
         return numberPhone;
     }
@@ -72,32 +79,27 @@ public class Paciente {
         this.numberPhone = numberPhone;
     }
 
-    public String Birthday() {
-        return Birthday;
-    }
-
-    public void Birthday(String Birthday) {
-        this.Birthday = Birthday;
-    }
-    public String getnumhistoria() {
+    public String getNumhistoria() {
         return numhistoria;
     }
 
-    public void setnumhistoria(String numhistoria) {
+    public void setNumhistoria(String numhistoria) {
         this.numhistoria = numhistoria;
     }
-    public String getVersion() {
-        return Version;
-    }
 
-    public void setVersion(String Version) {
-        this.Version = Version;
-    }
     public String getDiagnostico() {
         return Diagnostico;
     }
 
-    public void setDiagnostico(String Diagnostico) {
-        this.Diagnostico = Diagnostico;
+    public void setDiagnostico(String diagnostico) {
+        Diagnostico = diagnostico;
+    }
+
+    public String getVersion() {
+        return Version;
+    }
+
+    public void setVersion(String version) {
+        Version = version;
     }
 }
