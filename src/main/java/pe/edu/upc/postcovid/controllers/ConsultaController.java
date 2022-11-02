@@ -6,6 +6,7 @@ import pe.edu.upc.postcovid.entities.Consulta;
 import pe.edu.upc.postcovid.serviceinterfaces.IConsultaService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/consulta")
@@ -39,9 +40,15 @@ public class ConsultaController {
 
     //Buscar
 
-    @PostMapping("/buscar")
+    /*@PostMapping("/buscar")
     public List<Consulta> buscar(@RequestBody Consulta c){
         return cService.search(c.getNameMedico());
+    }*/
+
+    ///listar id
+    @GetMapping("/listarid/{id}")
+    public Optional listarId(@PathVariable("id")Integer id ){
+        return cService.listarid(id);
     }
 
 

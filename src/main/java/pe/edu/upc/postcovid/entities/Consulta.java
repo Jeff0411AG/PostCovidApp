@@ -12,11 +12,11 @@ public class Consulta {
     @Column(name = "fechaConsulta",length = 20,nullable = false)
     private String fechaConsulta;
 
-    @Column(name = "namePaciente",length = 30,nullable = false)
-    private String namePaciente;
+    //@Column(name = "namePaciente",length = 30,nullable = false)
+    //private String namePaciente;
 
-    @Column(name = "nameMedico",length = 30,nullable = false)
-    private String nameMedico;
+    //@Column(name = "nameMedico",length = 30,nullable = false)
+    //private String nameMedico;
 
     @Column(name = "diagnositco",length = 70,nullable = false)
     private String diagnositco;
@@ -24,16 +24,28 @@ public class Consulta {
     @Column(name = "observacion",length = 70,nullable = false)
     private String observacion;
 
+    /////ManyToOne
+    @ManyToOne
+    @JoinColumn(name = "idDoctor", nullable = false)
+    private Doctor doctor;
+
+    @ManyToOne
+    @JoinColumn(name = "idPaciente",nullable = false)
+    private Paciente paciente;
+    /////////
+
+
     public Consulta() {
+
     }
 
-    public Consulta(int idConsulta, String fechaConsulta, String namePaciente, String nameMedico, String diagnositco, String observacion) {
+    public Consulta(int idConsulta, String fechaConsulta, String diagnositco, String observacion, Doctor doctor, Paciente paciente) {
         this.idConsulta = idConsulta;
         this.fechaConsulta = fechaConsulta;
-        this.namePaciente = namePaciente;
-        this.nameMedico = nameMedico;
         this.diagnositco = diagnositco;
         this.observacion = observacion;
+        this.doctor = doctor;
+        this.paciente = paciente;
     }
 
     public int getIdConsulta() {
@@ -52,22 +64,6 @@ public class Consulta {
         this.fechaConsulta = fechaConsulta;
     }
 
-    public String getNamePaciente() {
-        return namePaciente;
-    }
-
-    public void setNamePaciente(String namePaciente) {
-        this.namePaciente = namePaciente;
-    }
-
-    public String getNameMedico() {
-        return nameMedico;
-    }
-
-    public void setNameMedico(String nameMedico) {
-        this.nameMedico = nameMedico;
-    }
-
     public String getDiagnositco() {
         return diagnositco;
     }
@@ -83,4 +79,23 @@ public class Consulta {
     public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+
+
 }
