@@ -7,6 +7,7 @@ import pe.edu.upc.postcovid.repositories.IdoctorRepository;
 import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DoctorServiceImpl implements IdoctorService {
@@ -33,5 +34,10 @@ public class DoctorServiceImpl implements IdoctorService {
     public List<Doctor> search(String nameDoctor) {
 
         return dS.buscarNombre((nameDoctor));
+    }
+
+    @Override
+    public Optional<Doctor> listarId(int idDoctor) {
+        return dS.findById((idDoctor));
     }
 }
