@@ -1,5 +1,6 @@
 package pe.edu.upc.postcovid.serviceinterfaces;
 
+
 import pe.edu.upc.postcovid.entities.Doctor;
 
 
@@ -13,8 +14,8 @@ public interface IdoctorService {
     List<Doctor>list();
     public void delete(int idDoctor);
     public List<Doctor> search(String nameDoctor);
-
     public Optional<Doctor> listarId(int idDoctor);
+
 
 
 }

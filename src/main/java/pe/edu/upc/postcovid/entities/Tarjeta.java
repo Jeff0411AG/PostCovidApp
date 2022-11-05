@@ -12,10 +12,12 @@ public class Tarjeta {
 
     @Column(name = "metodoPayment",length = 20,nullable = false)
     private String metodoPayment;
-    @Column(name = "namePatient",length = 20,nullable = false)
-    private String namePatient;
-    @Column(name = "lastNamePatient",length = 20,nullable = false)
-    private String lastNamePatient;
+
+    //@Column(name = "namePatient",length = 20,nullable = false)
+    //private String namePatient;
+    //@Column(name = "lastNamePatient",length = 20,nullable = false)
+    //private String lastNamePatient;
+
     @Column(name = "numberAccount",length = 20,nullable = false)
     private String numberAccount;
     @Column(name = "dateExpiration",length = 20,nullable = false)
@@ -23,15 +25,21 @@ public class Tarjeta {
     @Column(name = "numberCvc",length = 20,nullable = false)
     private String numberCvc;
 
+    @ManyToOne
+    @JoinColumn(name = "idPaciente",nullable = false)
+    private Paciente paciente;
+
+
     public Tarjeta() {
     }
-    public Tarjeta(int idTarjeta, String metodoPayment, String namePatient, String lastNamePatient, String numberAccount, String dateExpiration, String numberCvc) {
+
+    public Tarjeta(int idTarjeta, String metodoPayment, String numberAccount, String dateExpiration, String numberCvc, Paciente paciente) {
         this.idTarjeta = idTarjeta;
         this.metodoPayment = metodoPayment;
-        this.namePatient = namePatient;
         this.numberAccount = numberAccount;
         this.dateExpiration = dateExpiration;
         this.numberCvc = numberCvc;
+        this.paciente = paciente;
     }
 
     public int getIdTarjeta() {
@@ -48,22 +56,6 @@ public class Tarjeta {
 
     public void setMetodoPayment(String metodoPayment) {
         this.metodoPayment = metodoPayment;
-    }
-
-    public String getNamePatient() {
-        return namePatient;
-    }
-
-    public void setNamePatient(String namePatient) {
-        this.namePatient = namePatient;
-    }
-
-    public String getLastNamePatient() {
-        return lastNamePatient;
-    }
-
-    public void setLastNamePatient(String lastNamePatient) {
-        this.lastNamePatient = lastNamePatient;
     }
 
     public String getNumberAccount() {
@@ -89,5 +81,16 @@ public class Tarjeta {
     public void setNumberCvc(String numberCvc) {
         this.numberCvc = numberCvc;
     }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+
+
 }
 

@@ -7,6 +7,7 @@ import pe.edu.upc.postcovid.repositories.IconsultaRepository;
 import pe.edu.upc.postcovid.serviceinterfaces.IConsultaService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ConsultaServiceImpl implements IConsultaService {
@@ -30,9 +31,22 @@ public class ConsultaServiceImpl implements IConsultaService {
     }
 
     @Override
-    public List<Consulta> search(String nameMedico) {
+    public List<Consulta> buscarPorDoctor(String nameMedico) {
         return cR.buscarNombreMedico(nameMedico);
     }
+
+
+    /*@Override
+    public List<Consulta> search(String nameMedico) {
+        return cR.buscarNombreMedico(nameMedico);
+    }*/
+
+    ///listar id
+    @Override
+    public Optional<Consulta> listarid(int idConsulta) {
+        return cR.findById(idConsulta);
+    }
+    ////
 
 
 }

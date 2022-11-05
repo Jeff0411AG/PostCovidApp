@@ -6,6 +6,7 @@ import pe.edu.upc.postcovid.entities.Pregunta;
 import pe.edu.upc.postcovid.serviceinterfaces.IPreguntaService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pregunta")
@@ -37,5 +38,13 @@ public class PreguntaController {
     public List<Pregunta> buscar (@RequestBody Pregunta p){
         return pService.search(p.getDescripcion());
     }
+
+
+    @GetMapping("/listarid/{id}")
+    public Optional listarId(@PathVariable ("id") Integer id){
+        return pService.listarid(id);
+    }
+
+
 
 }

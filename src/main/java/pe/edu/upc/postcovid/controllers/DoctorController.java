@@ -42,4 +42,5 @@ public class DoctorController {
     public Optional<Doctor> listarId(@PathVariable("id")Integer id){
         return dService.listarId(id);
     }
+
 }

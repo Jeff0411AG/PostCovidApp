@@ -10,9 +10,8 @@ import java.util.List;
 
 @Repository
 public interface ItarjetaRepository extends JpaRepository<Tarjeta,Integer>{
-    @Query("from Tarjeta  d where upper(d.namePatient)  like %:namePatient% or LOWER(d.namePatient)" +
-            "like %:namePatient% OR d.namePatient like %:namePatient% ")
 
-    List<Tarjeta> buscarNombre(@Param("namePatient")String namePatient);
+    @Query("from Tarjeta t where upper(t.paciente.namePaciente) like %:namePatient% or lower(t.paciente.namePaciente) like %:namePatient% or t.paciente.namePaciente like %:namePaciente%")
+    List<Tarjeta> buscarPorPaciente(String namePaciente);
 
 }
