@@ -8,6 +8,8 @@ import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
 
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
@@ -31,9 +33,19 @@ public class DoctorController {
         dService.insert(d);
     }
 
+    ///buscar
     @PostMapping("/buscar")
     public List<Doctor> buscar(@RequestBody Doctor d){
         return dService.search(d.getNameDoctor());
 
     }
+
+    ///listar id
+    @GetMapping("/listarid/{id}")
+    public Optional listarId(@PathVariable("id") Integer id){
+        return dService.listarid(id);
+    }
+    ////
+
+
 }

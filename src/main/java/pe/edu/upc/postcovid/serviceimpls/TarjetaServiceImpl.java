@@ -7,6 +7,7 @@ import pe.edu.upc.postcovid.repositories.ItarjetaRepository;
 import pe.edu.upc.postcovid.serviceinterfaces.ItarjetaService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TarjetaServiceImpl implements ItarjetaService {
@@ -29,9 +30,19 @@ public class TarjetaServiceImpl implements ItarjetaService {
         dS.deleteById(idTarjeta);
     }
 
-    @Override
-    public List<Tarjeta> search(String namePatient) {
 
-        return dS.buscarNombre((namePatient));
+    ///buscar
+    @Override
+    public List<Tarjeta> buscarPorPaciente(String namePaciente) {
+        return dS.buscarPorPaciente(namePaciente);
     }
+
+
+    ////listar id
+    @Override
+    public Optional<Tarjeta> listarid(int idTarjeta) {
+        return dS.findById(idTarjeta);
+    }
+
+
 }

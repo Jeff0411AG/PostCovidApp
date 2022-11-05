@@ -6,6 +6,7 @@ import pe.edu.upc.postcovid.entities.Paciente;
 import pe.edu.upc.postcovid.serviceinterfaces.IpacienteService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/paciente")
@@ -34,4 +35,12 @@ public class PacienteController {
         return pService.search(d.getNamePaciente());
 
     }
+
+    ///listar id
+    @GetMapping("/listarId/{id}")
+    public Optional listarId(@PathVariable("id") Integer id){
+        return pService.listarid(id);
+    }
+
+
 }

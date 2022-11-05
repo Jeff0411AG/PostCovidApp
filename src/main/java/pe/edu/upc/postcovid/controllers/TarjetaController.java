@@ -9,6 +9,8 @@ import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
 import pe.edu.upc.postcovid.serviceinterfaces.ItarjetaService;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/tarjeta")
 public class TarjetaController {
@@ -31,9 +33,21 @@ public class TarjetaController {
     public void actualizar(@RequestBody Tarjeta d){
         dService.insert(d);
     }
+
+
+    //Buscar
     @PostMapping("/buscar")
-    public List<Tarjeta> buscar(@RequestBody Tarjeta d){
-        return dService.search(d.getNamePatient());
+    public List<Tarjeta> buscar(@RequestBody Tarjeta t){
+        return dService.buscarPorPaciente(t.getPaciente().getNamePaciente());
 
     }
+
+    ///listar id
+    @GetMapping("/listarid/{id}")
+    public Optional listarId(@PathVariable("id") Integer id) {
+        return dService.listarid(id);
+    }
+
+
+
 }

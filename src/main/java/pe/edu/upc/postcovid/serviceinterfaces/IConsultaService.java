@@ -14,8 +14,9 @@ public interface IConsultaService {
     //delete
     public void delete(int idconsulta);
 
-    /*//buscar
-    List<Consulta> search (String nameMedico);*/
+    //buscar
+    List<Consulta> buscarPorDoctor (String nameMedico);
+
 
     ///listar Id
     Optional<Consulta> listarid(int idConsulta);

@@ -40,10 +40,10 @@ public class ConsultaController {
 
     //Buscar
 
-    /*@PostMapping("/buscar")
+    @PostMapping("/buscar")
     public List<Consulta> buscar(@RequestBody Consulta c){
-        return cService.search(c.getNameMedico());
-    }*/
+        return cService.buscarPorDoctor(c.getDoctor().getNameDoctor());
+    }
 
     ///listar id
     @GetMapping("/listarid/{id}")

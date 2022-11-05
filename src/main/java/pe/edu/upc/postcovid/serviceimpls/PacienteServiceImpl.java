@@ -7,6 +7,7 @@ import pe.edu.upc.postcovid.repositories.IpacienteRepository;
 import pe.edu.upc.postcovid.serviceinterfaces.IpacienteService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PacienteServiceImpl implements IpacienteService {
@@ -33,5 +34,10 @@ public class PacienteServiceImpl implements IpacienteService {
     public List<Paciente> search(String namePaciente) {
 
         return pS.buscarNombre((namePaciente));
+    }
+
+    @Override
+    public Optional<Paciente> listarid(int idPaciente) {
+        return pS.findById(idPaciente);
     }
 }

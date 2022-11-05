@@ -30,6 +30,11 @@ public class ConsultaServiceImpl implements IConsultaService {
         cR.deleteById(idconsulta);
     }
 
+    @Override
+    public List<Consulta> buscarPorDoctor(String nameMedico) {
+        return cR.buscarNombreMedico(nameMedico);
+    }
+
 
     /*@Override
     public List<Consulta> search(String nameMedico) {

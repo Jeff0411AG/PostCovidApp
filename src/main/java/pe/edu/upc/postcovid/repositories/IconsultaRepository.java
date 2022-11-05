@@ -11,6 +11,8 @@ import java.util.List;
 @Repository
 public interface IconsultaRepository extends JpaRepository <Consulta,Integer> {
 
-    /*@Query ("from Consulta c where upper(c.nameMedico)  like %:nameMedico% or LOWER(c.nameMedico) like %:nameMedico% OR c.nameMedico like %:nameMedico%")
-    List<Consulta> buscarNombreMedico(String nameMedico);*/
+    @Query ("from Consulta c where upper(c.doctor.nameDoctor)  like %:nameMedico% or LOWER(c.doctor.nameDoctor) like %:nameMedico% OR c.doctor.nameDoctor like %:nameMedico%")
+    List<Consulta> buscarNombreMedico(String nameMedico);
+
+
 }
