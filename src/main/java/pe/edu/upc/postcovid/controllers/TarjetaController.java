@@ -43,7 +43,7 @@ public class TarjetaController {
     }
 
     ///listar id
-    @GetMapping("/listarid/{id}")
+    @GetMapping("/{id}")
     public Optional listarId(@PathVariable("id") Integer id) {
         return dService.listarid(id);
     }

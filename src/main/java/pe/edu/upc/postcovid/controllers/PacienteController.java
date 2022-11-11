@@ -37,7 +37,7 @@ public class PacienteController {
     }
 
     ///listar id
-    @GetMapping("/listarId/{id}")
+    @GetMapping("/{id}")
     public Optional listarId(@PathVariable("id") Integer id){
         return pService.listarid(id);
     }

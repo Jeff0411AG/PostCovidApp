@@ -18,7 +18,6 @@ public class PreguntaServiceImpl implements IPreguntaService {
     @Override
     public void insrt(Pregunta pregunta) {
         pR.save(pregunta);
-
     }
 
     @Override

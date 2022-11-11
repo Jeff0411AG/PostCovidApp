@@ -40,7 +40,7 @@ public class PreguntaController {
     }
 
 
-    @GetMapping("/listarid/{id}")
+    @GetMapping("/{id}")
     public Optional listarId(@PathVariable ("id") Integer id){
         return pService.listarid(id);
     }
