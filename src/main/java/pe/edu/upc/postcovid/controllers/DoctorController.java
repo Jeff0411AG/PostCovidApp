@@ -38,7 +38,7 @@ public class DoctorController {
         return dService.search(d.getNameDoctor());
 
     }
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Optional<Doctor> listarId(@PathVariable("id")Integer id){
         return dService.listarId(id);
     }
