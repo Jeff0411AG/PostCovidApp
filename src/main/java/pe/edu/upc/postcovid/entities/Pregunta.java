@@ -17,13 +17,18 @@ public class Pregunta {
     @Column(name = "respuesta", length = 75, nullable = false)
     private String respuesta;
 
+    @ManyToOne
+    @JoinColumn(name = "idDoctor", nullable = false)
+    private Doctor doctor;
+
     public Pregunta() {
     }
 
-    public Pregunta(int idPregunta, String descripcion, String respuesta) {
+    public Pregunta(int idPregunta, String descripcion, String respuesta, Doctor doctor) {
         this.idPregunta = idPregunta;
         this.descripcion = descripcion;
         this.respuesta = respuesta;
+        this.doctor = doctor;
     }
 
     public int getIdPregunta() {
@@ -48,5 +53,13 @@ public class Pregunta {
 
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 }
