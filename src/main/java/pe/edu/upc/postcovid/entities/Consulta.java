@@ -13,6 +13,7 @@ public class Consulta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idConsulta;
 
+    //mofificacion para fecha
     @Column(name = "fechaConsulta",length = 20,nullable = false)
     @JsonSerialize(using = ToStringSerializer.class)
     private LocalDate fechaConsulta;
