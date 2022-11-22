@@ -2,10 +2,12 @@ package pe.edu.upc.postcovid.serviceimpls;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.postcovid.entities.CantidadPreguntas;
 import pe.edu.upc.postcovid.entities.Pregunta;
 import pe.edu.upc.postcovid.repositories.IpreguntaRepository;
 import pe.edu.upc.postcovid.serviceinterfaces.IPreguntaService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +42,22 @@ public class PreguntaServiceImpl implements IPreguntaService {
     @Override
     public Optional<Pregunta> listarid(int idPregunta) {
         return pR.findById(idPregunta);
+    }
+
+    ///Querry TF
+    @Override
+    public List<CantidadPreguntas> buscarcantidadpregunta() {
+
+        List<CantidadPreguntas> lista= new ArrayList<>();
+        pR.BuscarCantidadPreguntas().forEach(y->{
+            CantidadPreguntas cp= new CantidadPreguntas();
+            cp.setIddoctor(y[0]);
+            cp.setNombredoctor(y[1]);
+            cp.setApellidodoctor(y[2]);
+            cp.setCantidad(y[3]);
+            lista.add(cp);
+        });
+        return lista;
     }
 
 

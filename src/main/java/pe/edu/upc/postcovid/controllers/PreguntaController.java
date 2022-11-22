@@ -2,6 +2,7 @@ package pe.edu.upc.postcovid.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.postcovid.entities.CantidadPreguntas;
 import pe.edu.upc.postcovid.entities.Pregunta;
 import pe.edu.upc.postcovid.serviceinterfaces.IPreguntaService;
 
@@ -43,6 +44,12 @@ public class PreguntaController {
     @GetMapping("/{id}")
     public Optional listarId(@PathVariable ("id") Integer id){
         return pService.listarid(id);
+    }
+
+    ////QuerryTF
+    @GetMapping("/buscarCantidad")
+    public List<CantidadPreguntas> buscarcantidadpreguntas(){
+        return pService.buscarcantidadpregunta();
     }
 
 
