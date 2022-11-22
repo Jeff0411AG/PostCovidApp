@@ -2,6 +2,7 @@ package pe.edu.upc.postcovid.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.postcovid.entities.CantidadConsulta;
 import pe.edu.upc.postcovid.entities.Consulta;
 import pe.edu.upc.postcovid.serviceinterfaces.IConsultaService;
 
@@ -51,5 +52,10 @@ public class ConsultaController {
         return cService.listarid(id);
     }
 
+    ///Querry TF
+    @GetMapping("/Querry1")
+    public List<CantidadConsulta> buscarCantitatConsutlas(){
+        return cService.BuscarCantidadConsultas();
+    }
 
 }
