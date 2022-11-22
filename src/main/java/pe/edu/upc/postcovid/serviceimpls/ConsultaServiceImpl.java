@@ -63,7 +63,14 @@ public class ConsultaServiceImpl implements IConsultaService {
         });
         return lista;
     }
+
+    @Override
+    public List<Consulta> buscarConsultasNoviembre() {
+        return cR.BuscarConsutlasNoviembre();
+    }
     ////
+
+
 
 
 

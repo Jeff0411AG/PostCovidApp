@@ -58,4 +58,9 @@ public class ConsultaController {
         return cService.BuscarCantidadConsultas();
     }
 
+    ///
+    @GetMapping("/Querry2")
+    public List<Consulta> buscarconsultasNoviembre(){
+        return cService.buscarConsultasNoviembre();
+    }
 }

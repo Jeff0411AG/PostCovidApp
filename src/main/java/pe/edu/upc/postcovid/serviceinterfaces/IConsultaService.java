@@ -26,6 +26,9 @@ public interface IConsultaService {
 
     /////Querry TF
     List<CantidadConsulta> BuscarCantidadConsultas();
+    ///
+    List<Consulta> buscarConsultasNoviembre();
+
 
 
 }
