@@ -1,4 +1,4 @@
-package pe.edu.upc.postcovid.util;
+package pe.edu.upc.postcovid.Util;
 
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
