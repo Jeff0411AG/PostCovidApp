@@ -46,5 +46,9 @@ public class PacienteController {
     public List<Paciente> buscarmayoredad(){
         return pService.buscarmayoredad();
     }
+    @GetMapping("/buscar segundo dx")
+    public List<Paciente> segundodx(){
+        return pService.segundodx();
+    }
 
 }

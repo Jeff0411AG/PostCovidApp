@@ -46,5 +46,10 @@ public class PacienteServiceImpl implements IpacienteService {
         return pS.buscarmayoredad();
     }
 
+    @Override
+    public List<Paciente> segundodx() {
+        return pS.segundodx();
+    }
+
 
 }
