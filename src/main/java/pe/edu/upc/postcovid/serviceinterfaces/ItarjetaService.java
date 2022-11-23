@@ -21,7 +21,7 @@ public interface ItarjetaService {
 
     List<ResultadoT> buscarTarjetaCantidad();
 
-    List<Tarjeta> buscarPorCuenta(String cuentaTarjeta);
+    List<Tarjeta> findByNumberAccount(String cuentaTarjeta);
 
     List<Tarjeta> buscarNumeroDominio();
 

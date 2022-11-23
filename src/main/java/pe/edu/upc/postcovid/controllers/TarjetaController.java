@@ -53,11 +53,12 @@ public class TarjetaController {
 
     @PostMapping("/buscarNumero")
     public List<Tarjeta> buscarNumero(@RequestBody String numero){
-        return dService.buscarPorCuenta(numero);
+        return dService.findByNumberAccount(numero);
     }
 
-    @GetMapping
-    public List<Tarjeta> buscarNumeroDominioB(){
+
+    @GetMapping("/dominios")
+    public List<Tarjeta> buscarNumeroDominio(){
         return dService.buscarNumeroDominio();
     }
 

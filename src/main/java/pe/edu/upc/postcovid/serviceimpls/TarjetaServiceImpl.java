@@ -65,10 +65,9 @@ public class TarjetaServiceImpl implements ItarjetaService {
     }
 
     @Override
-    public List<Tarjeta> buscarPorCuenta(String cuentaTarjeta) {
-        return dS.findByCuentaTarjeta(cuentaTarjeta);
+    public List<Tarjeta> findByNumberAccount(String cuentaTarjeta) {
+        return dS.findByNumberAccount(cuentaTarjeta);
     }
-
 
     @Override
     public List<Tarjeta> buscarNumeroDominio() {
