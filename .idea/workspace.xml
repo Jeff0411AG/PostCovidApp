@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="56ca997b-5838-41aa-99c4-78bd02940d83" name="Changes" comment="09/11/2022">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pe/edu/upc/postcovid/Util/CORS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pe/edu/upc/postcovid/Util/CORS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitinore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
