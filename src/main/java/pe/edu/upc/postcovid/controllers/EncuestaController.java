@@ -2,6 +2,7 @@ package pe.edu.upc.postcovid.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.postcovid.entities.CantidadEncuesta;
 import pe.edu.upc.postcovid.entities.Consulta;
 import pe.edu.upc.postcovid.entities.Encuesta;
 import pe.edu.upc.postcovid.serviceinterfaces.IencuestaService;
@@ -54,6 +55,11 @@ public class EncuestaController {
     @GetMapping("/buscarNoviembre")
     public List<Encuesta> buscarNoviembre(){
         return eS.buscarNoviembre();
+    }
+
+    @GetMapping("/cantidadEncuestas")
+    public List<CantidadEncuesta> cantidadEncuestas(){
+        return eS.cantidadEncuestas();
     }
 
 

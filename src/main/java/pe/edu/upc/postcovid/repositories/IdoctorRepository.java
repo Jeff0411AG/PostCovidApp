@@ -13,10 +13,6 @@ public interface IdoctorRepository extends JpaRepository<Doctor,Integer>{
             "like %:nameDoctor% OR d.nameDoctor like %:nameDoctor% ")
     List<Doctor> buscarNombre(String nameDoctor);
 
-    @Query(value = "select d.name_paciente, count(c.id_encuesta)\n" +
-            "from Encuesta c \n" +
-            "inner Join Paciente d on c.id_paciente = d.id_paciente\n" +
-            "group by d.name_paciente", nativeQuery = true)
-    List<String[]> cantidadDoctor();
+
 
 }

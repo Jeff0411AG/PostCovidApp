@@ -1,14 +1,14 @@
 package pe.edu.upc.postcovid.entities;
 
-public class CantidadDoctor {
+public class CantidadEncuesta {
 
     private String paciente;
     private String cantidad;
 
-    public CantidadDoctor() {
+    public CantidadEncuesta() {
     }
 
-    public CantidadDoctor(String paciente, String cantidad) {
+    public CantidadEncuesta(String paciente, String cantidad) {
         this.paciente = paciente;
         this.cantidad = cantidad;
     }

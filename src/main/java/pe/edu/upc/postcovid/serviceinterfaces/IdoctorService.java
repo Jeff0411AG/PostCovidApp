@@ -1,8 +1,6 @@
 package pe.edu.upc.postcovid.serviceinterfaces;
 
 
-import pe.edu.upc.postcovid.entities.CantidadConsulta;
-import pe.edu.upc.postcovid.entities.CantidadDoctor;
 import pe.edu.upc.postcovid.entities.Doctor;
 
 
@@ -18,7 +16,7 @@ public interface IdoctorService {
     public List<Doctor> search(String nameDoctor);
     public Optional<Doctor> listarId(int idDoctor);
 
-    List<CantidadDoctor> cantidadDoctor();
+
 
 
 

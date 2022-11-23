@@ -19,5 +19,11 @@ public interface IencuestaRepository extends JpaRepository<Encuesta, Integer> {
             "ORDER BY v.fecha_encuesta ASC",nativeQuery = true)
     List<Encuesta>buscarNoviembre();
 
+    @Query(value = "select d.name_paciente, count(c.id_encuesta)\n" +
+            "from Encuesta c \n" +
+            "inner Join Paciente d on c.id_paciente = d.id_paciente\n" +
+            "group by d.name_paciente", nativeQuery = true)
+    List<String[]> cantidadEncuesta();
+
 
 }

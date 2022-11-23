@@ -3,6 +3,7 @@ package pe.edu.upc.postcovid.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
+import pe.edu.upc.postcovid.entities.CantidadEncuesta;
 import pe.edu.upc.postcovid.entities.Doctor;
 import pe.edu.upc.postcovid.entities.Encuesta;
 import pe.edu.upc.postcovid.entities.Paciente;
@@ -13,6 +14,7 @@ import pe.edu.upc.postcovid.serviceinterfaces.IencuestaService;
 import pe.edu.upc.postcovid.serviceinterfaces.IpacienteService;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,5 +62,16 @@ public class EncuestaServiceImpl implements IencuestaService {
         return eS.buscarNoviembre();
     }
 
+    @Override
+    public List<CantidadEncuesta> cantidadEncuestas() {
 
+        List<CantidadEncuesta> lista=new ArrayList<>();
+            eS.cantidadEncuesta().forEach(y->{
+            CantidadEncuesta cc=new CantidadEncuesta();
+            cc.setPaciente(y[0]);
+            cc.setCantidad(y[1]);
+            lista.add(cc);
+        });
+        return lista;
+    }
 }
