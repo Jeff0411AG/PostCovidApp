@@ -1,5 +1,6 @@
 package pe.edu.upc.postcovid.serviceinterfaces;
 
+import pe.edu.upc.postcovid.entities.Consulta;
 import pe.edu.upc.postcovid.entities.Doctor;
 import pe.edu.upc.postcovid.entities.Encuesta;
 
@@ -16,5 +17,5 @@ public interface IencuestaService {
 
     public Optional<Encuesta> listarId(int idDoctor);
 
-
+    List<Encuesta> buscarNoviembre();
 }

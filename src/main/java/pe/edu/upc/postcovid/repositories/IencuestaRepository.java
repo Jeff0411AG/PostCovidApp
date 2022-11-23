@@ -13,7 +13,11 @@ public interface IencuestaRepository extends JpaRepository<Encuesta, Integer> {
     List<Encuesta> buscarEncuesta(@Param("anotaciones") String anotaciones);
 
 
-
+    @Query(value = "select * from encuesta v \n" +
+            "join paciente p on v.id_paciente = p.id_paciente\n" +
+            "where v.fecha_encuesta >= '20221101'\n" +
+            "ORDER BY v.fecha_encuesta ASC",nativeQuery = true)
+    List<Encuesta>buscarNoviembre();
 
 
 }

@@ -55,4 +55,10 @@ public class EncuestaServiceImpl implements IencuestaService {
         return eS.findById((idEncuesta));
     }
 
+    @Override
+    public List<Encuesta> buscarNoviembre() {
+        return eS.buscarNoviembre();
+    }
+
+
 }

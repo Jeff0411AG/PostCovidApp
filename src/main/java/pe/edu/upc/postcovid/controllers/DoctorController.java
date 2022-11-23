@@ -3,6 +3,8 @@ package pe.edu.upc.postcovid.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import pe.edu.upc.postcovid.entities.CantidadConsulta;
+import pe.edu.upc.postcovid.entities.CantidadDoctor;
 import pe.edu.upc.postcovid.entities.Doctor;
 import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
 
@@ -41,6 +43,11 @@ public class DoctorController {
     @GetMapping("/{id}")
     public Optional<Doctor> listarId(@PathVariable("id")Integer id){
         return dService.listarId(id);
+    }
+
+    @GetMapping("/cantidadDoctor")
+    public List<CantidadDoctor> cantidadDoctor(){
+        return dService.cantidadDoctor();
     }
 
 }
