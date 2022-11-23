@@ -51,7 +51,11 @@ public class PreguntaController {
     public List<CantidadPreguntas> buscarcantidadpreguntas(){
         return pService.buscarcantidadpregunta();
     }
-
+    ////
+    @GetMapping("/CantidadmenorPreguntas")
+    public List<CantidadPreguntas> doctoresconmenospreguntas(){
+        return  pService.doctoresconmenospreguntas();
+    }
 
 
 }

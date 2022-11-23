@@ -60,5 +60,19 @@ public class PreguntaServiceImpl implements IPreguntaService {
         return lista;
     }
 
+    @Override
+    public List<CantidadPreguntas> doctoresconmenospreguntas() {
+        List<CantidadPreguntas> lista= new ArrayList<>();
+        pR.doctoresconmenospreguntas().forEach(y->{
+            CantidadPreguntas cp= new CantidadPreguntas();
+            cp.setIddoctor(y[0]);
+            cp.setNombredoctor(y[1]);
+            cp.setApellidodoctor(y[2]);
+            cp.setCantidad(y[3]);
+            lista.add(cp);
+        });
+        return lista;
+    }
+
 
 }

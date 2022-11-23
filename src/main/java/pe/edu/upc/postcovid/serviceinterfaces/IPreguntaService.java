@@ -22,6 +22,7 @@ public interface IPreguntaService
     ///QuerryTF
     List<CantidadPreguntas> buscarcantidadpregunta();
     ///
+    List<CantidadPreguntas> doctoresconmenospreguntas();
 
 
 }
