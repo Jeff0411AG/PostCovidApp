@@ -2,7 +2,6 @@ package pe.edu.upc.postcovid.serviceimpls;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.postcovid.entities.Consulta;
 import pe.edu.upc.postcovid.entities.Doctor;
 import pe.edu.upc.postcovid.repositories.IdoctorRepository;
 import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
@@ -42,6 +41,8 @@ public class DoctorServiceImpl implements IdoctorService {
     public Optional<Doctor> listarId(int idDoctor) {
         return dS.findById((idDoctor));
     }
+
+
 
 
 }

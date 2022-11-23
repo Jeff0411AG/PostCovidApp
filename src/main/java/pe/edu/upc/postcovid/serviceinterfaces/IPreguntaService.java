@@ -1,5 +1,6 @@
 package pe.edu.upc.postcovid.serviceinterfaces;
 
+import pe.edu.upc.postcovid.entities.CantidadPreguntas;
 import pe.edu.upc.postcovid.entities.Pregunta;
 
 import java.util.List;
@@ -18,6 +19,10 @@ public interface IPreguntaService
     ///listar id
     Optional<Pregunta> listarid(int idPregunta);
 
+    ///QuerryTF
+    List<CantidadPreguntas> buscarcantidadpregunta();
+    ///
+    List<CantidadPreguntas> doctoresconmenospreguntas();
 
 
 }

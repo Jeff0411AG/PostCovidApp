@@ -13,4 +13,6 @@ public interface IdoctorRepository extends JpaRepository<Doctor,Integer>{
             "like %:nameDoctor% OR d.nameDoctor like %:nameDoctor% ")
     List<Doctor> buscarNombre(String nameDoctor);
 
+
+
 }
