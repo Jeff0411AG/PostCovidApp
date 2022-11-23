@@ -14,7 +14,7 @@ public interface ItarjetaRepository extends JpaRepository<Tarjeta,Integer>{
     @Query("from Tarjeta t where upper(t.paciente.namePaciente) like %:namePatient% or lower(t.paciente.namePaciente) like %:namePatient% or t.paciente.namePaciente like %:namePaciente%")
     List<Tarjeta> buscarPorPaciente(String namePaciente);
 
-    @Query(value = "select p.name_paciente, count (t.id_tarjeta) from Tarjeta t inner join Paciente p on t.id_paciente = p.id_paciente\n group by p.name_paciente", nativeQuery = true)
+    @Query(value = "select p.name_paciente, count (t.id_tarjeta) from Tarjeta t inner join Paciente p on t.id_paciente = p.id_paciente group by p.name_paciente", nativeQuery = true)
     List<String[]> buscarTarjetas();
 
     List<Tarjeta> findByNumberAccount(String numero);
