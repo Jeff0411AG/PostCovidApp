@@ -2,10 +2,8 @@ package pe.edu.upc.postcovid.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import pe.edu.upc.postcovid.entities.Doctor;
+import pe.edu.upc.postcovid.entities.ResultadoT;
 import pe.edu.upc.postcovid.entities.Tarjeta;
-import pe.edu.upc.postcovid.serviceinterfaces.IdoctorService;
 import pe.edu.upc.postcovid.serviceinterfaces.ItarjetaService;
 
 import java.util.List;
@@ -46,6 +44,21 @@ public class TarjetaController {
     @GetMapping("/{id}")
     public Optional listarId(@PathVariable("id") Integer id) {
         return dService.listarid(id);
+    }
+
+    @GetMapping("/cantidades")
+    public List<ResultadoT> buscarTarjetas(){
+        return dService.buscarTarjetaCantidad();
+    }
+
+    @PostMapping("/buscarNumero")
+    public List<Tarjeta> buscarNumero(@RequestBody String numero){
+        return dService.buscarPorCuenta(numero);
+    }
+
+    @GetMapping
+    public List<Tarjeta> buscarNumeroDominioB(){
+        return dService.buscarNumeroDominio();
     }
 
 
