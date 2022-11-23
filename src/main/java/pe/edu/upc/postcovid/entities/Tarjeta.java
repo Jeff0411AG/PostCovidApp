@@ -1,11 +1,15 @@
 package pe.edu.upc.postcovid.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Tarjeta")
 public class Tarjeta {
-
+    private static final long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTarjeta;
@@ -20,20 +24,20 @@ public class Tarjeta {
 
     @Column(name = "numberAccount",length = 20,nullable = false)
     private String numberAccount;
-    @Column(name = "dateExpiration",length = 20,nullable = false)
-    private String dateExpiration;
+    @Column(name = "dateExpiration")
+    @JsonSerialize(using = ToStringSerializer.class)
+    private LocalDate dateExpiration;
     @Column(name = "numberCvc",length = 20,nullable = false)
     private String numberCvc;
 
     @ManyToOne
-    @JoinColumn(name = "idPaciente",nullable = false)
+    @JoinColumn(name = "idPaciente")
     private Paciente paciente;
 
 
-    public Tarjeta() {
-    }
+    public Tarjeta() {super();}
 
-    public Tarjeta(int idTarjeta, String metodoPayment, String numberAccount, String dateExpiration, String numberCvc, Paciente paciente) {
+    public Tarjeta(int idTarjeta, String metodoPayment, String numberAccount, LocalDate dateExpiration, String numberCvc, Paciente paciente) {
         this.idTarjeta = idTarjeta;
         this.metodoPayment = metodoPayment;
         this.numberAccount = numberAccount;
@@ -66,11 +70,11 @@ public class Tarjeta {
         this.numberAccount = numberAccount;
     }
 
-    public String getDateExpiration() {
+    public LocalDate getDateExpiration() {
         return dateExpiration;
     }
 
-    public void setDateExpiration(String dateExpiration) {
+    public void setDateExpiration(LocalDate dateExpiration) {
         this.dateExpiration = dateExpiration;
     }
 
@@ -89,8 +93,5 @@ public class Tarjeta {
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
-
-
-
 }
 
