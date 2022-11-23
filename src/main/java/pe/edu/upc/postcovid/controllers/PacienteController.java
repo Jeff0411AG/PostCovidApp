@@ -42,5 +42,9 @@ public class PacienteController {
         return pService.listarid(id);
     }
 
+    @GetMapping("/buscar mayores de edad")
+    public List<Paciente> buscarmayoredad(){
+        return pService.buscarmayoredad();
+    }
 
 }

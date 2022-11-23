@@ -40,4 +40,11 @@ public class PacienteServiceImpl implements IpacienteService {
     public Optional<Paciente> listarid(int idPaciente) {
         return pS.findById(idPaciente);
     }
+
+    @Override
+    public List<Paciente> buscarmayoredad() {
+        return pS.buscarmayoredad();
+    }
+
+
 }

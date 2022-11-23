@@ -1,7 +1,12 @@
 package pe.edu.upc.postcovid.entities;
 
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import net.bytebuddy.asm.Advice;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Paciente")
@@ -14,8 +19,10 @@ public class Paciente {
     private String namePaciente;
     @Column(name = "lastNamePaciente", length = 20, nullable = false)
     private String lastNamePaciente;
-    @Column(name = "Birthday", length = 20, nullable = false)
-    private String Birthday;
+    @Column(name = "Birthday")
+    @JsonSerialize(using = ToStringSerializer.class)
+    private LocalDate Birthday;
+
     @Column(name = "numberPhone", length = 20, nullable = false)
     private String numberPhone;
     @Column(name = "numhistoria", length = 20, nullable = false)
@@ -28,11 +35,12 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(int idPaciente, String namePaciente, String lastNamePaciente, String birthday, String numberPhone, String numhistoria, String diagnostico, String version) {
+    public Paciente(int idPaciente, String namePaciente, String lastNamePaciente, LocalDate Birthday,
+                    String numberPhone, String numhistoria, String diagnostico, String version) {
         this.idPaciente = idPaciente;
         this.namePaciente = namePaciente;
         this.lastNamePaciente = lastNamePaciente;
-        Birthday = birthday;
+        this.Birthday = Birthday;
         this.numberPhone = numberPhone;
         this.numhistoria = numhistoria;
         Diagnostico = diagnostico;
@@ -63,11 +71,11 @@ public class Paciente {
         this.lastNamePaciente = lastNamePaciente;
     }
 
-    public String getBirthday() {
+    public LocalDate getBirthday() {
         return Birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(LocalDate birthday) {
         Birthday = birthday;
     }
 

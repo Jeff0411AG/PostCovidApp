@@ -14,5 +14,6 @@ public interface IpacienteRepository extends JpaRepository<Paciente,Integer>{
             "like %:namePaciente% OR d.namePaciente like %:namePaciente% ")
 
     List<Paciente> buscarNombre(@Param("namePaciente")String namePaciente);
-
+    @Query(value = "select * from paciente p where date_part('year', CURRENT_DATE) - date_part('year', p.birthday)>18", nativeQuery = true )
+    List<Paciente> buscarmayoredad();
 }
