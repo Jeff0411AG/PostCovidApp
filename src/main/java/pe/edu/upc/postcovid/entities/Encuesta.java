@@ -1,6 +1,10 @@
 package pe.edu.upc.postcovid.entities;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Encuesta")
@@ -10,8 +14,9 @@ public class Encuesta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idEncuesta;
 
-    @Column(name = "fechaEncuesta", length = 60, nullable = false)
-    private String fechaEncuesta;
+    @Column(name = "fechaEncuesta")
+    @JsonSerialize(using = ToStringSerializer.class)
+    private LocalDate fechaEncuesta;
 
     @ManyToOne
     @JoinColumn(name = "idPaciente")
@@ -24,7 +29,7 @@ public class Encuesta {
         super();
     }
 
-    public Encuesta(int idEncuesta, Paciente paciente, String fechaEncuesta, String anotaciones) {
+    public Encuesta(int idEncuesta, Paciente paciente, LocalDate fechaEncuesta, String anotaciones) {
         this.idEncuesta = idEncuesta;
         this.paciente = paciente;
         this.fechaEncuesta = fechaEncuesta;
@@ -47,11 +52,11 @@ public class Encuesta {
         this.paciente = paciente;
     }
 
-    public String getFechaEncuesta() {
+    public LocalDate getFechaEncuesta() {
         return fechaEncuesta;
     }
 
-    public void setFechaEncuesta(String fechaEncuesta) {
+    public void setFechaEncuesta(LocalDate fechaEncuesta) {
         this.fechaEncuesta = fechaEncuesta;
     }
 

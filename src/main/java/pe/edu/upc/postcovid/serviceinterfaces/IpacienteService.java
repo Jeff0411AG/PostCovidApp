@@ -14,6 +14,8 @@ public interface IpacienteService {
 
     ///listar id
     Optional<Paciente> listarid(int idPaciente);
+    List<Paciente> buscarmayoredad();
 
+    List<Paciente> segundodx();
 
 }
